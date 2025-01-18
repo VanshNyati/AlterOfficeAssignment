@@ -1,4 +1,3 @@
-// backend/routes/taskRoutes.js
 const express = require('express');
 const {
     getTasks,
@@ -11,7 +10,7 @@ const { verifyToken } = require('../middlewares/authMiddleware');
 const router = express.Router();
 
 router.get('/tasks/:userId', verifyToken, getTasks);
-router.post('/tasks', verifyToken, createTask);
+router.post('/tasks', verifyToken, createTask); // No need for upload middleware
 router.put('/tasks/:id', verifyToken, updateTask);
 router.delete('/tasks/:id', verifyToken, deleteTask);
 
